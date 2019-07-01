@@ -1,24 +1,12 @@
 import * as React from 'react'
 
-export default class Square extends React.Component<{value: number}> {
-    state = {
-        value: null
-    }
-
-    constructor(props: {value: number}) {
-        super(props)
-    }
-
-    squareOnClicked = () => {
-        this.setState({
-            value: 'X'
-        })
-    }
-
+export default class Square extends React.Component<{value: number, onClick: () => void}> {
     render() {
         return (
-        <button className="square" onClick={this.squareOnClicked}>
-            {this.state.value}
+        <button
+            className="square"
+            onClick={() => this.props.onClick()}>
+            {this.props.value}
         </button>
         );
     }
