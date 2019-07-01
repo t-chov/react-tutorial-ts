@@ -1,13 +1,14 @@
 import * as React from 'react'
+import SquareState from './SquareState'
 
-export default class Square extends React.Component<{value: number, onClick: () => void}> {
-    render() {
-        return (
+const Square: React.FunctionComponent<SquareState> = (state) => {
+    return (
         <button
             className="square"
-            onClick={() => this.props.onClick()}>
-            {this.props.value}
+            onClick={() => state.onClick()}>
+            {state.value}
         </button>
-        );
-    }
+    );
 }
+
+export default Square
