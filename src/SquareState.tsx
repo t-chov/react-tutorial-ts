@@ -1,5 +1,5 @@
 interface SquareState {
-    value: number,
+    value: string,
     onClick: () => void
 }
 
